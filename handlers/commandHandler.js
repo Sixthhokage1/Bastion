@@ -38,7 +38,7 @@ module.exports = async message => {
     if (!message.guild.prefix.some(prefix => message.content.startsWith(usedPrefix = prefix))) return;
 
     // Ignore commands from ignored roles & channels. Doesn't affect the guild administrator.
-    if (!message.member.hasPermission('ADMINISTRATOR')) {
+    if (!message.member.hasPermission('MANAGE_GUILD')) {
       if (guild.ignoredChannels) {
         if (guild.ignoredChannels.split(' ').includes(message.channel.id)) return;
       }

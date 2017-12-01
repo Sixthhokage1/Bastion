@@ -62,7 +62,7 @@ exports.config = {
 exports.help = {
   name: 'setPrefix',
   botPermission: '',
-  userTextPermission: 'ADMINISTRATOR',
+  userTextPermission: 'MANAGE_GUILD',
   userVoicePermission: '',
   usage: 'setPrefix < prefix | --default >',
   example: [ 'setPrefix !', 'setPrefix --default' ]
