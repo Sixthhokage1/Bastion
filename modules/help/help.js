@@ -96,7 +96,7 @@ exports.exec = async (Bastion, message, args) => {
         embed: {
           color: Bastion.colors.GOLD,
           title: 'Help',
-          description: `To get a list of commands, type \`${message.guild.prefix[0]}commands\`.\nTo get help about a specific command, type \`${message.guild.prefix[0]}help command_name\`.\n\nNeed help or support with Bastion Discord Bot?\nJoin Bastion Support Server for any help you need.\nhttps://discord.gg/fzx8fkt\n\nSee your DM from me, for invite links.`,
+          description: `To get a list of commands, type \`${message.guild.prefix[0]}commands\`.\nTo get help about a specific command, type \`${message.guild.prefix[0]}help command_name\`.`,
           footer: {
             text: `Server Prefix: ${message.guild.prefix.join(' ')} | Total Commands: ${Bastion.commands.size}`
           }
@@ -105,31 +105,7 @@ exports.exec = async (Bastion, message, args) => {
         Bastion.log.error(e);
       });
 
-      let authorDMChannel = await message.author.createDM();
-      await authorDMChannel.send('https://discord.gg/fzx8fkt', {
-        embed: {
-          color: Bastion.colors.BLUE,
-          title: 'Bastion: Discord Bot',
-          url: 'https://BastionBot.org',
-          description: 'Join [**Bastion Support Server**](https://discord.gg/fzx8fkt) for testing the commands or any help you need with the bot or maybe just for fun.',
-          fields: [
-            {
-              name: 'Support Server Invite Link',
-              value: 'https://discord.gg/fzx8fkt'
-            },
-            {
-              name: 'BOT Invite Link',
-              value: `https://discordapp.com/oauth2/authorize?client_id=${Bastion.user.id}&scope=bot&permissions=2146958463`
-            }
-          ],
-          thumbnail: {
-            url: Bastion.user.displayAvatarURL
-          },
-          footer: {
-            text: 'Copyright © 2017 - The Bastion Bot Project'
-          }
-        }
-      });
+      
     }
   }
   catch (e) {

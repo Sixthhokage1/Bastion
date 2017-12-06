@@ -8,9 +8,9 @@ exports.exec = (Bastion, message) => {
   message.channel.send({
     embed: {
       color: Bastion.colors.GOLD,
-      title: 'Bastion Bot - Support Server',
+      title: '[Upstream] Bastion Bot - Support Server',
       url: 'https://discord.gg/fzx8fkt',
-      description: 'Need help or support with Bastion Discord Bot?\nJoin Bastion Support Server for any help you need.\nhttps://discord.gg/fzx8fkt',
+      description: 'Need help or support with Bastion Discord Bot not specific to our fork?\nJoin Bastion Support Server for any help you need.\nhttps://discord.gg/fzx8fkt',
       fields: [
         {
           name: 'Website',
