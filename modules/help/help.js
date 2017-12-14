@@ -105,7 +105,7 @@ exports.exec = async (Bastion, message, args) => {
         Bastion.log.error(e);
       });
 
-      
+
     }
   }
   catch (e) {
