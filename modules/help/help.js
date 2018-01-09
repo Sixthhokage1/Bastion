@@ -96,7 +96,11 @@ exports.exec = async (Bastion, message, args) => {
         embed: {
           color: Bastion.colors.GOLD,
           title: 'Help',
-          description: `To get a list of commands, type \`${message.guild.prefix[0]}commands\`.\nTo get help about a specific command, type \`${message.guild.prefix[0]}help command_name\`.`,
+          description: `To get the list of modules, type \`${message.guild.prefix[0]}commands\`.\nTo get a list of commands in a module, type \`${message.guild.prefix[0]}commands <module name>\`` +
+                       `\nTo get help about a specific command, type \`${message.guild.prefix[0]}help <command_name>\`.`,
+          thumbnail: {
+            url: Bastion.user.displayAvatarURL
+          },
           footer: {
             text: `Server Prefix: ${message.guild.prefix.join(' ')} | Total Commands: ${Bastion.commands.size}`
           }
@@ -104,8 +108,6 @@ exports.exec = async (Bastion, message, args) => {
       }).catch(e => {
         Bastion.log.error(e);
       });
-
-
     }
   }
   catch (e) {
