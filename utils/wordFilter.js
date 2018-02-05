@@ -28,7 +28,7 @@ module.exports = async message => {
       }
     }
     // If the user is an admin, return
-    if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+    if (message.member && message.member.hasPermission('MANAGE_GUILD')) return;
 
     let filteredWords = [];
     if (guild.filteredWords) {
