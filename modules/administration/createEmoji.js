@@ -6,7 +6,7 @@
 
 exports.exec = async (Bastion, message, args) => {
   try {
-    if (!args.url || !/^(https?:\/\/)((([-a-z0-9]{1,})?(-?)+[-a-z0-9]{1,})(\.))+([a-z]{1,63})\/((([a-z0-9._\-~#%])+\/)+)?([a-z0-9._\-~#%]+)\.(jpg|jpeg|gif|png|bmp)$/i.test(args.url) || !args.name) {
+    if (!args.url || !/^(https?:\/\/)((([-a-z0-9]{1,})?(-?)+[-a-z0-9]{1,})(\.))+([a-z]{1,63})\/((([a-z0-9._\-~#%])+\/)+)?([a-z0-9._\-~#%]+)\.(jpg|jpeg|gif|png)$/i.test(args.url) || !args.name) {
       /**
       * The command was ran with invalid parameters.
       * @fires commandUsage
@@ -21,9 +21,14 @@ exports.exec = async (Bastion, message, args) => {
         color: Bastion.colors.GREEN,
         description: `${message.author.tag} created the emoji **${emoji.name}**`
       }
+    }).catch(e => {
+      Bastion.log.error(e);
     });
   }
   catch (e) {
+    if (e.code === 50035) {
+      return Bastion.emit('error', Bastion.strings.error(message.guild.language, 'invalidInput'), 'File cannot be larger than 256 KB.', message.channel);
+    }
     Bastion.log.error(e);
   }
 };

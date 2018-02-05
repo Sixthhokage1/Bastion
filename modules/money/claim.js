@@ -7,14 +7,11 @@
 let claimedUsers = [];
 const specialIDs = require('../../data/specialIDs.json');
 
-exports.exec = async (Bastion, message) => {
+exports.exec = (Bastion, message) => {
   if (!claimedUsers.includes(message.author.id)) {
     let rewardAmount;
 
-    let patrons = await Bastion.functions.getPatrons(754397);
-    patrons = patrons.map(patron => patron.discord_id);
-
-    if (patrons.includes(message.author.id)) {
+    if (message.member && message.member.roles.has(specialIDs.patronsRole)) {
       rewardAmount = Bastion.functions.getRandomInt(100, 150);
     }
     else if (message.member && message.member.roles.has(specialIDs.donorsRole)) {
@@ -51,7 +48,9 @@ exports.exec = async (Bastion, message) => {
         description: `Your account has been debited with **${rewardAmount}** Bastion Currencies.`
       }
     }).catch(e => {
-      Bastion.log.error(e);
+      if (e.code !== 50007) {
+        Bastion.log.error(e);
+      }
     });
   }
   else {
