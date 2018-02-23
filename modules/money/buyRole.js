@@ -6,6 +6,14 @@
 
 exports.exec = async (Bastion, message, args) => {
   try {
+    if (!args.role) {
+      /**
+      * The command was ran with invalid parameters.
+      * @fires commandUsage
+      */
+      return Bastion.emit('commandUsage', message, this.help);
+    }
+
     args.role = args.role.join(' ');
 
     let role;
@@ -42,6 +50,9 @@ exports.exec = async (Bastion, message, args) => {
       message.member.addRole(role);
 
       Bastion.emit('userCredit', message.author, rolesInStore[role.id]);
+      if (message.author.id !== message.guild.owner.id) {
+        Bastion.emit('userDebit', message.guild.owner, (0.9) * rolesInStore[role.id]);
+      }
 
       message.channel.send({
         embed: {

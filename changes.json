@@ -1,31 +1,33 @@
 {
-  "date": "February 4, 2018",
+  "date": "February 18, 2018",
   "fixed": [
-    "Bastion won't respond to chat conversations if it has no content.",
-    "Fixed a bug that prevented `sinfo` command from showing emojis in a server that had animated emojis.",
-    "Fixed `urbanDictionary` command not responding when a word was not found.",
-    "`userLookup` won't give errors if you don't provide arguemnts.",
-    "`createEmoji` will now let you know if image file size exceeds the limit.",
-    "Fixed message reaction event triggering for reactions in DM",
-    "Fixed `iAm` and `iAmNot` commands not working when the server member is not cached.",
-    "Fixed an issue with buying the Heart from the Gift Shop.",
-    "Fixed an issue that caused music channels and music master roles to sneakily get deleted.",
-    "A workaround for a Discord bug - that allowed empty role names - that errored `roleCreate`, `roleDelete` and `roleUpdate` events.",
-    "Under-the-hood fixes"
+    "Fixed an issue that caused the giveaway events not really end, if it was forcefully ended.",
+    "Fixed the music being skipped multiple times when the `skip` command was used.",
+    "`emojiInfo` will respond with better error response when the specified emoji is not available.",
+    "Fixed `removeRole` role command secretly the success message after the role has been removed.",
+    "Fixed `game` command crashes when searcing for an unreleased game.",
+    "Fixed `trivia` command crashes when server didn't respond with any question."
   ],
   "improved": [
-    "If server doesn't have an icon, Bastion would now show the server's acronym in instead of showing a generic Discord logo.",
-    "You can now report silently by using user IDs instead of mentioning them and notifying them.",
-    "Successful user reports will automatically be deleted to make it more silent.",
-    "Paginated the `steam` command.",
+    "You can now see how many server Bastion share with a user in the `userInfo` command.",
+    "You can now remove playlists using the new `--remove` options of the `playlist` command.",
+    "You can now run polls for a specified amount of minutes using the `--time` (or `-t`) option in the `poll` command. Remember, you still can't run polls for more than 6 hours.",
+    "Poll results will now have the vote count too, so you get a better insight.",
+    "You can now specify the difficulty of trivia questions using the `--difficulty` (or `-d`) option in the `trivia` command.",
+    "When no role is specified to buy with the `buyRole` command, it will show the command usage.",
+    "When the search query is not specified with the `google` command, it will show the command usage.",
+    "Gifs are now shown in an embed when you use the `giphy` command.",
     "Under-the-hood improvements"
   ],
   "added": [
-    "You can now sell roles in your server using the new `roleStore` command. `roleStore` also lists the roles for sale in your server.",
-    "Selling roles in your server? Server members can buy them using the `buyRole` command, provided they have enought Bastion Currencies.",
-    "Rocket League players, you can now check your Rocket League stats using the `rocketLeague` command.",
-    "You can now search for any game details you want using the new `game` command. Want to show a game to a friend while chatting, just use the `game` command."
+    "You can now prank your friends by showing that you're trying to ban them from the server, but not really, using the `fakeBan` command. Don't do that much though, maybe they will *really* ban you for that.",
+    "You can now disable the commands you don't want to use, in your server, using the new `disableCommand` command.",
+    "And if you changed your mind and want to use it again, enable it using the new `disableCommand` command.",
+    "You can now filter mention spams in your server, including the amount of mentions to be considered as a spam and the action that should be taken, using the new `filterMentionSpam` command."
   ],
-  "removed": [],
+  "removed": [
+    "Removed Bastion's hidden way of allowing admins to enable/disable command using channel topic in favor native support for it.",
+    "Removed `disableModule`, `disableAllCommands`, `disableCommand`, `enableModule`, `enableAllCommands` and `enableModule` commands from `Bot Owner` module, in favor of it arriving in `Server Admin` module."
+  ],
   "issues": []
 }
