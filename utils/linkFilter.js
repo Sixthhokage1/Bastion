@@ -28,7 +28,7 @@ module.exports = async message => {
         if (message.member.roles.has(whitelistRole)) return;
       }
     }
-    // If the user is an admin, return
+    // If the user has Manage Server permission, return
     if (message.member && message.member.hasPermission('MANAGE_GUILD')) return;
 
     let whitelistDomains = JSON.parse(guild.whitelistDomains),
