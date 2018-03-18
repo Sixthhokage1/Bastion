@@ -2,5 +2,5 @@ This is a fork of the Bastion Discord bot for the Spectra Castle server communit
 
 The Bastion project can be found at https://bastionbot.org or on Github at https://github.com/TheBastionBot/Bastion and you can support the project's developer k3rn31p4nic on Patreon and Paypal:
 
-* https://www.patreon.com/snkrsnkampa
+* https://www.patreon.com/bastionbot
 * https://paypal.me/snkrsnkampa
