@@ -35,6 +35,8 @@ module.exports = async message => {
             title: 'Leveled up',
             description: `:up: **${message.author.username}**#${message.author.discriminator} leveled up to **Level ${currentLevel}**`
           }
+        }).then(msg => {
+          msg.delete(5000).catch(() => {});
         }).catch(e => {
           message.client.log.error(e);
         });
@@ -52,7 +54,7 @@ module.exports = async message => {
         let level = `${currentLevel}`;
         if (levelUpRoles.hasOwnProperty(level)) {
           let roles = levelUpRoles[level].split(' ');
-          await message.member.addRoles(roles);
+          await message.member.addRoles(roles).catch(() => {});
         }
       }
     }

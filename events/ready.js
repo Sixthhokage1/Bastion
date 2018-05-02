@@ -17,7 +17,7 @@ module.exports = async Bastion => {
       game: {
         name: typeof Bastion.config.game.name === 'string' ? Bastion.config.game.name : Bastion.config.game.name.length ? Bastion.config.game.name[0] : null,
         type: Bastion.config.game.type,
-        url: Bastion.config.game.url
+        url: Bastion.config.game.url && Bastion.config.game.url.trim().length ? Bastion.config.game.url : null
       }
     });
 
@@ -27,7 +27,7 @@ module.exports = async Bastion => {
           await Bastion.user.setActivity(Bastion.config.game.name[Math.floor(Math.random() * Bastion.config.game.name.length)],
             {
               type: Bastion.config.game.type,
-              url: Bastion.config.game.url
+              url: Bastion.config.game.url && Bastion.config.game.url.trim().length ? Bastion.config.game.url : null
             });
         }
         catch (e) {
@@ -110,7 +110,7 @@ module.exports = async Bastion => {
         title: 'I\'m Ready to Roll!',
         description: `Connected to ${guilds} servers${Bastion.shard ? ` in ${Bastion.shard.count} shards` : ''}.`,
         footer: {
-          icon_url: 'https://resources.bastionbot.org/logos/BastionLogo-Eye.png',
+          icon_url: 'https://resources.bastionbot.org/logos/Bastion_Logomark_C.png',
           text: `Bastion v${Bastion.package.version}`
         },
         timestamp: new Date()
