@@ -59,15 +59,6 @@ exports.exec = async (Bastion, message, args) => {
     */
     Bastion.emit('moderationLog', message.guild, message.author, this.help.name, user, args.reason);
 
-    let DMChannel = await user.createDM();
-    DMChannel.send({
-      embed: {
-        color: Bastion.colors.RED,
-        description: Bastion.strings.info(message.guild.language, 'banDM', message.author.tag, message.guild.name, args.reason)
-      }
-    }).catch(e => {
-      Bastion.log.error(e);
-    });
   }
   catch (e) {
     Bastion.log.error(e);
