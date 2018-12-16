@@ -1,7 +1,11 @@
 {
-  "date": "November 14, 2018",
-  "image": "https://i.imgur.com/XoYGUZ3.gif",
+  "date": "December 13, 2018",
+  "image": "https://i.imgur.com/Xytiuj8.gif",
   "IMPROVEMENTS": [
-    "Some under-the-hood improvements."
+    "Some under-the-hood improvements & fixes that makes Bastion more efficient."
+  ],
+  "HAPPY HOLIDAYS!": [
+    "Happy holidays to you and your family from The Bastion Bot Team.",
+    "Set your reminders for this new year. Bastion v7 is gonna be released!"
   ]
 }
