@@ -1,11 +1,11 @@
 {
-  "date": "December 13, 2018",
-  "image": "https://i.imgur.com/Xytiuj8.gif",
-  "IMPROVEMENTS": [
-    "Some under-the-hood improvements & fixes that makes Bastion more efficient."
+  "date": "January 20, 2019",
+  "image": "https://i.imgur.com/hbMnuYj.gif",
+  "CHANGES": [
+    "Gambling cooldown has now been increased to 60 minutes."
   ],
-  "HAPPY HOLIDAYS!": [
-    "Happy holidays to you and your family from The Bastion Bot Team.",
-    "Set your reminders for this new year. Bastion v7 is gonna be released!"
+  "FIXES": [
+    "Fixed `userInfo` command not working with user mentions.",
+    "Fixed `removeAllRoles` command not working as it should be."
   ]
 }
