@@ -1,11 +1,10 @@
 {
-  "date": "January 20, 2019",
-  "image": "https://i.imgur.com/hbMnuYj.gif",
-  "CHANGES": [
-    "Gambling cooldown has now been increased to 60 minutes."
-  ],
+  "date": "January 25, 2019",
+  "image": "https://i.imgur.com/T2klvh4.gif",
   "FIXES": [
-    "Fixed `userInfo` command not working with user mentions.",
-    "Fixed `removeAllRoles` command not working as it should be."
+    "Fixed an issue that prevented the `rank` command from working!"
+  ],
+  "IMPROVEMENTS": [
+    "Made some under-the-hood improvements too!"
   ]
 }
