@@ -117,7 +117,7 @@ module.exports = async Bastion => {
     }
 
     if (!Bastion.shard || process.env.SHARDS_READY) {
-      let bootTime = Math.floor(process.uptime());
+      let bootTime = process.uptime() * 1000;
       let guilds = Bastion.shard ? await Bastion.shard.broadcastEval('this.guilds.size') : Bastion.guilds.size;
       if (guilds instanceof Array) {
         guilds = guilds.reduce((sum, val) => sum + val, 0);
@@ -127,7 +127,7 @@ module.exports = async Bastion => {
       Bastion.log.console(COLOR`{gray ${Bastion.package.url}}`);
 
       Bastion.log.console(COLOR`\n{gray </> with ❤ by The Bastion Bot Team & Contributors}`);
-      Bastion.log.console(COLOR`{gray Copyright (C) 2017-2018 The Bastion Bot Project}`);
+      Bastion.log.console(COLOR`{gray Copyright (C) 2017-2019 The Bastion Bot Project}`);
 
       Bastion.log.console(COLOR`\n{cyan [${Bastion.user.username}]:} I'm ready to roll! 🚀\n`);
 
@@ -137,7 +137,7 @@ module.exports = async Bastion => {
       Bastion.log.console(COLOR`{green [  SERVERS]:} ${guilds}`);
       Bastion.log.console(COLOR`{green [   PREFIX]:} ${Bastion.configurations.prefix.join(' ')}`);
       Bastion.log.console(COLOR`{green [ COMMANDS]:} ${Bastion.commands.size}`);
-      Bastion.log.console(COLOR`{green [BOOT TIME]:} ${bootTime}s`);
+      Bastion.log.console(COLOR`{green [BOOT TIME]:} ${bootTime}ms`);
 
       Bastion.webhook.send('bastionLog', {
         color: Bastion.colors.BLUE,
