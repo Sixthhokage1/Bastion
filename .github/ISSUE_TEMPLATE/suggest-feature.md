@@ -1,8 +1,8 @@
 ---
-name: Feature Request
-about: Suggest an idea for Bastion
+name: Suggest Feature
+about: Suggest an idea/feature for Bastion
 title: "[IDEA]: "
-labels: Feature Request
+labels: "\U0001F4A1 Idea"
 assignees: ''
 
 ---

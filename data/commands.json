@@ -9,7 +9,7 @@
   },
   "addFilteredWords": {
     "description": "Adds specified words to the list of filtered words. If someone sends a message containing these words, their message will be automatically deleted.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "addRole": {
     "description": "Adds the specified role to a specified user of your Discord server.",
@@ -25,7 +25,7 @@
   },
   "addWhitelistDomains": {
     "description": "Adds a domain to the whitelist for link filter.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "afk": {
     "description": "Sets you as Away From Keyboard (AFK). So when someone mentions you, Bastion will let them know that you're AFK. It'll be automatically disabled once you are back.",
@@ -103,6 +103,10 @@
     "description": "Bet %currency.name_plural% on prediction of the outcome of rolling a dice. If you win, you get more of it. But if you lose, you lose the amount you have bet.",
     "module": "Gambling"
   },
+  "betSlots": {
+    "description": "Bet %currency.name_plural% on slot machine! You win if all 3 reels stop at the same emojis. There's also a grand prize if all 3 reels stop at :moneybag:!",
+    "module": "Gambling"
+  },
   "blacklist": {
     "description": "Adds/Removes a specified user to %bastion%'s blacklist. Blacklisted users cannot use any of %bastion%'s commands.",
     "module": "Bot Owner"
@@ -122,6 +126,10 @@
   "buyRole": {
     "description": "Buy role from the server's Role Store.",
     "module": "Profile"
+  },
+  "cacheMembers": {
+    "description": "Fetches all members of your server from Discord and stores them in Bastion's local cache.",
+    "module": "Server Management"
   },
   "calculate": {
     "description": "Evaluates any mathematical expression.",
@@ -373,23 +381,23 @@
   },
   "filterEmojis": {
     "description": "Toggles automatic deleting of messages that are emoji spams. Messages with more than 50% of its content with emojis are considered as emoji spams.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "filterInvite": {
     "description": "Toggles automatic deleting of Discord server invites posted in the server.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "filterLink": {
     "description": "Toggles automatic deletion of any links posted in the server.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "filterMentionSpam": {
     "description": "Toggles filtering of mention spams in the server and also set the threshold and action to be taken.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "filterWord": {
     "description": "Toggles automatic deletion of messages that contains any word that is being filtered.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "flip": {
     "description": "Flips the specified amount of coins and shows you the outcomes.",
@@ -497,15 +505,15 @@
   },
   "ignoreInviteFilter": {
     "description": "Add/remove channels/roles to/from the invite filter ignored list. Bastion will not filter invites posted in these channels or by these roles.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "ignoreLinkFilter": {
     "description": "Add/remove channels/roles to/from the link filter ignored list. Bastion will not filter links posted in these channels or by these roles.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "ignoreMentionFilter": {
     "description": "Add/remove channels/roles to/from the mention filter ignored list. Bastion will not filter mention spams in these channels or by these roles.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "ignoreRoles": {
     "description": "Adds or removes roles to/from the ignored roles' list. Bastion doesn't accept any commands from the roles that are being ignored.",
@@ -517,7 +525,7 @@
   },
   "ignoreWordFilter": {
     "description": "Add/remove channels/roles to/from the word filter ignored list. Bastion will not filter words posted in these channels or by these roles.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "ignoreXP": {
     "description": "Add/remove channels/roles to/from the experience ignored list. Users will not gain experience in these channels or if they have these roles.",
@@ -526,6 +534,10 @@
   "inRole": {
     "description": "Shows members that have a specified role in your Discord server.",
     "module": "Info"
+  },
+  "invite": {
+    "description": "Shows you a invite links to the server and also shows how to invite Bastion.",
+    "module": "Productivity"
   },
   "isBreached": {
     "description": "Check if a site has been breached in the past.",
@@ -538,6 +550,10 @@
   "jumbledWord": {
     "description": "Unscramble the given jumbled word and increase your vocabulary skills while having fun with your friends.",
     "module": "Games"
+  },
+  "karmaBoard": {
+    "description": "Shows the users with the highest karma in the server.",
+    "module": "Server Management"
   },
   "kick": {
     "description": "Kicks the specified user from your Discord server.",
@@ -579,9 +595,13 @@
     "description": "Lists all auto-assignable roles.",
     "module": "Server Configuration"
   },
+  "listBans": {
+    "description": "Lists all the banned users of the Discord Server with the reason for the ban.",
+    "module": "Moderation"
+  },
   "listFilteredWords": {
     "description": "Lists all filtered words.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "listScheduledCommands": {
     "description": "Lists all the scheduled commands.",
@@ -605,7 +625,7 @@
   },
   "listWhitelistDomains": {
     "description": "Lists all whitelisted domains for the link filter.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "live": {
     "description": "Shows the list of users in your Discord server who are currently streaming.",
@@ -668,7 +688,7 @@
     "module": "Utility"
   },
   "moveMembers": {
-    "description": "Moves all the members in a voice channel to another specified voice channel.",
+    "description": "Moves all the members in a voice channel to another specified voice channel. If the destination voice channel is not specified, Bastion will instead kick all the members from the source voice channel.",
     "module": "Server Management"
   },
   "movie": {
@@ -833,7 +853,7 @@
   },
   "removeFilteredWord": {
     "description": "Deletes a word from the list of filtered words.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "removeRole": {
     "description": "Removes the specified role from a specified user of your Discord server.",
@@ -849,7 +869,7 @@
   },
   "removeWhitelistDomain": {
     "description": "Deletes a domain from the list of whitelisted domains.",
-    "module": "Server Configuration"
+    "module": "Filters"
   },
   "renameChannel": {
     "description": "Renames the specified text or voice channel of your Discord server.",
@@ -880,7 +900,7 @@
     "module": "Server Configuration"
   },
   "resetProfile": {
-    "description": "Resets all your profile data, inluding all the XP, level, karma and currency that you've earned. If you have Manage Server permission, you can delete everyone's profiles.",
+    "description": "Resets all your profile data, inluding all the XP, level, karma and currency that you've earned. If you have Manage Server permission, you can reset anyone and everyone's profiles.",
     "module": "Profile"
   },
   "resume": {
@@ -1034,6 +1054,10 @@
   "setProfilePicture": {
     "description": "Sets your profile picture that shows up in the Bastion user profile.",
     "module": "Profile"
+  },
+  "setRateLimit": {
+    "description": "Sets the rate limit for users in the text/news channel of your Discord server. Members will be restricted to sending one message per this interval, unless they have Manage Channel or Manage Messages permissions.",
+    "module": "Server Management"
   },
   "setStatus": {
     "description": "Sets the status of %bastion%.",
