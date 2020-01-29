@@ -144,8 +144,8 @@ exports.exec = async (Bastion, message, args) => {
         '--simulate',
         '--no-warnings',
         '--format=bestaudio[protocol^=http]',
-        `--user-agent=BastionDiscordBot/v${Bastion.package.version} (https://bastionbot.org)`,
-        '--referer=https://bastionbot.org',
+        `--user-agent=BastionDiscordBot/v${Bastion.package.version} (https://bastion.traction.one)`,
+        '--referer=https://bastion.traction.one',
         '--youtube-skip-dash-manifest'
       ];
 
@@ -260,8 +260,8 @@ async function startStreamDispatcher(guild, connection) {
       '--simulate',
       '--no-warnings',
       '--format=bestaudio[protocol^=http]',
-      '--user-agent=BastionDiscordBot (https://bastionbot.org)',
-      '--referer=https://bastionbot.org',
+      '--user-agent=BastionDiscordBot (https://bastion.traction.one)',
+      '--referer=https://bastion.traction.one',
       '--youtube-skip-dash-manifest'
     ];
 
@@ -282,7 +282,7 @@ async function startStreamDispatcher(guild, connection) {
   }
   else if (!guild.music.songs[0] || connection.channel.members.size <= 1) {
     if (guild.client.configurations.music && guild.client.configurations.music.status) {
-      guild.client.user.setActivity(typeof guild.client.configurations.game.name === 'string' ? guild.client.configurations.game.name : guild.client.configurations.game.name.length ? guild.client.configurations.game.name[0] : null,
+      guild.client.user.setActivity(typeof guild.client.configurations.game.name === 'string' ? guild.client.configurations.game.name : guild.client.configurations.game.name instanceof Array ? guild.client.configurations.game.name[0] : null,
         {
           type: guild.client.configurations.game.type,
           url: guild.client.configurations.game.url && guild.client.configurations.game.url.trim().length ? guild.client.configurations.game.url : null

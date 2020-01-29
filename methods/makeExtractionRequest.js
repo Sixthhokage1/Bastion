@@ -1,11 +1,11 @@
 /**
- * @file makeBWAPIRequest
+ * @file makeExtractionRequest
  * @author Sankarsan Kampa (a.k.a k3rn31p4nic)
  * @license GPL-3.0
  */
 
-const BastionWebAPI = xrequire('bwapi');
-const BWAPI = new BastionWebAPI({
+const ExtractionAPI = require('ex.traction');
+const extraction = new ExtractionAPI({
   headers: {
     'User-Agent': 'Bastion Discord Bot (https://bastion.traction.one)'
   }
@@ -14,7 +14,7 @@ const BWAPI = new BastionWebAPI({
 module.exports = (path, options) => {
   return new Promise(async (resolve, reject) => {
     try {
-      let response = await BWAPI.request(path, options);
+      let response = await extraction.request(path, options);
 
       resolve(response);
     }

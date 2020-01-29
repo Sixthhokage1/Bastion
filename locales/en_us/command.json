@@ -89,6 +89,9 @@
   "book": {
     "description": "Searches for the details of a book"
   },
+  "botRole": {
+    "description": "Sets/unsets the Bot Role in the server. Any bot that joins the server is given this role."
+  },
   "buy": {
     "description": "Buy items from the server's shop. You can also gift it to some other member while buying."
   },
@@ -118,6 +121,9 @@
   },
   "catFact": {
     "description": "Shows a random fact about cats."
+  },
+  "catch": {
+    "description": "Catch any robbers, who are stealing %currency.name_plural%, in the channel."
   },
   "catify": {
     "description": "Generates a random kitten image from the given string or your Discord tag if no string is specified."
@@ -242,6 +248,9 @@
   "donate": {
     "description": "Instructions on how to financially support the development of the Bastion Bot project."
   },
+  "drop": {
+    "description": "Drops some %currency.name_plural% in the current channel, so anybody can pick it up."
+  },
   "echo": {
     "description": "Sends the same message that you had sent. Just like an echo!"
   },
@@ -356,14 +365,11 @@
   "greetTimeout": {
     "description": "Sets the time after which greeting message will be automatically deleted."
   },
-  "guide": {
-    "description": "Shows you the guide on how to setup and install Private Bastion Bot. And links to the Bastion HQ."
-  },
   "hello": {
     "description": "Get greetings from %bastion%."
   },
   "help": {
-    "description": "Shows help on the specified command."
+    "description": "Shows help on the specified command. If a command isn't specified, it shows links to knowledge base resources."
   },
   "hug": {
     "description": "Give a hug to someone!"
@@ -560,6 +566,9 @@
   "pause": {
     "description": "Pauses the current playback in your Discord server."
   },
+  "pick": {
+    "description": "Picks all the %currency.name_plural% dropped in the current channel and adds it to your account."
+  },
   "ping": {
     "description": "Shows the response time and average WebSocket ping of %bastion%."
   },
@@ -732,7 +741,7 @@
     "description": "Get stats of any Rust game server."
   },
   "scheduleCommand": {
-    "description": "Schedule a command as cron jobs to run at the specified schedule.\n`cron` expression format:```Second         0-59 or * or range\nMinute         0-59 or * or range\nHour           0-23 or * or range\nDay of month   1-31 or * or range\nMonth          1-12 or * or range\nDay of week    0-7 (0 or 7 is SUN) or * or range```"
+    "description": "Schedule a command as cron jobs to run at the specified schedule.\n`cron` expression format:```Minute         0-59 or * or range\nHour           0-23 or * or range\nDay of month   1-31 or * or range\nMonth          1-12 or * or range\nDay of week    0-7 (0 or 7 is SUN) or * or range```"
   },
   "searchServers": {
     "description": "Searches for Discord servers, containing the specified text in their name, that Bastion is connected to."
@@ -851,6 +860,9 @@
   "stats": {
     "description": "Shows detailed stats and info of %bastion%."
   },
+  "steal": {
+    "description": "Steal some %currency.name_plural% from the specified member."
+  },
   "steam": {
     "description": "Browse the games in different categories of the Steam Store."
   },
@@ -886,6 +898,9 @@
   },
   "teamFortress2": {
     "description": "Get stats of any Team Fortress 2 game server."
+  },
+  "teamtrees": {
+    "description": "Help #TeamTrees plant 20 million trees around the globe by January 1st, 2020!"
   },
   "terms": {
     "description": "Read %bastion%'s Terms of Service."

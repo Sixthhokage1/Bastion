@@ -1,13 +1,14 @@
 {
-  "date": "August 11, 2019",
+  "date": "December 17, 2019",
   "image": "https://i.imgur.com/k6azzsE.gif",
   "IMPROVEMENTS": [
-    "If the `reminder` command is used without arguments, it'll now show the reminder message.",
-    "You won't be able to accidentally set scheduled commands for every second.",
-    "Some under-the-hood improvements, as usual."
+    "Humans can't steal from multiple person simulataneously, so we fixed the issue where you were able to steal from multiple people in a channel.",
+    "Thieves can't `catch` other thieves anymore. We won't allow that level of hipocricy.",
+    "The use of `steal` command will be auto deleted when the robbery is a success, to remove all the traces of who stole it.",
+    "Some under-the-hood changes & improvements, to make Bastion even better."
   ],
   "FIXES": [
-    "Fixed `translate` command not working sometimes.",
-    "Some under-the-hood fixes to make Bastion even better."
+    "Fix the `game` command not showing the proper release date.",
+    "Some under-the-hood fixes, as usual, to improve Bastion."
   ]
 }

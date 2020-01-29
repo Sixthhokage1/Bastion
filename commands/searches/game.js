@@ -32,16 +32,16 @@ exports.exec = async (Bastion, message, args) => {
         },
         {
           name: 'Release Date',
-          value: new Date(game.first_release_date).toDateString(),
+          value: new Date(game.first_release_date * 1000).toDateString(),
           inline: true
         },
         {
           name: 'Links',
-          value: game.websites ? game.websites.map(website => website.url).join('\n') : '-'
+          value: game.websites ? game.websites.join('\n') : '-'
         }
       ],
       image: {
-        url: `https://images.igdb.com/igdb/image/upload/t_cover_big/${game.cover.cloudinary_id}.jpg`
+        url: game.cover
       },
       footer: {
         text: 'Powered by IGDB'

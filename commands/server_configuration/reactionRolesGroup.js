@@ -4,6 +4,8 @@
  * @license GPL-3.0
  */
 
+const Sequelize = xrequire('sequelize');
+
 exports.exec = async (Bastion, message, args) => {
   let reactionRolesGroupModels = await Bastion.database.models.reactionRolesGroup.findAll({
     fields: [ 'messageID' ],
@@ -55,8 +57,18 @@ exports.exec = async (Bastion, message, args) => {
   }
 
 
-  if (reactionRolesGroupModels && reactionRolesGroupModels.length === 2) {
-    return Bastion.emit('error', '', 'You can\'t have more than 2 Reaction Roles Group, for now. Delete any previous Group of Reaction Roles to add new ones.', message.channel);
+  if (Bastion.methods.isPublicBastion(Bastion)) {
+    let limit = 2;
+
+    let patrons = await Bastion.methods.getBastionPatrons().catch(() => {});
+    if (patrons && patrons.map(p => p.discord_id).includes(message.guild.ownerID)) {
+      let patron = patrons.find(p => p.discord_id === message.guild.ownerID);
+      limit += parseInt(patron.amount_cents / 100) * 2;
+    }
+
+    if (!Bastion.credentials.ownerId.includes(message.guild.ownerID) && reactionRolesGroupModels && reactionRolesGroupModels.length >= limit) {
+      return Bastion.emit('error', '', `You can't set more than ${limit} Reaction Roles Group. Want to set more Reaction Roles Group? [You can get 2 extra Reaction Roles Group for every dollar you donate towards supporting The Bastion Bot Project on Patreon, as well as other cool perks.](https://patreon.com/bastionbot)`, message.channel);
+    }
   }
 
 
@@ -65,7 +77,7 @@ exports.exec = async (Bastion, message, args) => {
     where: {
       guildID: message.guild.id,
       emoji: {
-        [Bastion.database.Op.not]: null
+        [Sequelize.Op.not]: null
       }
     }
   });
