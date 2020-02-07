@@ -71,10 +71,6 @@ module.exports = async member => {
     }
 
     if (guildModel.dataValues.serverLog) {
-      if (member.guild.me && member.guild.me.hasPermission('BAN_MEMBERS')) {
-        let bannedMember = await member.guild.fetchBan(member);
-        if (bannedMember) return;
-      }
 
       let logChannel = member.guild.channels.get(guildModel.dataValues.serverLog);
       if (logChannel) {
