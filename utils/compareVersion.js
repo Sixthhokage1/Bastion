@@ -12,7 +12,7 @@ const currentPackage = xrequire('./package.json');
  * @param {string} branch The branch name
  * @returns {string} The URL for the package file for the specified branch
  */
-const getPackageUrl = (branch) => `https://raw.githubusercontent.com/TheBastionBot/Bastion/${branch}/package.json`;
+const getPackageUrl = (branch) => `https://raw.githubusercontent.com/Sixthhokage1/PEFEgon/${branch}/package.json`;
 
 /**
  * Returns whether the current version with the latest version.
@@ -68,7 +68,7 @@ module.exports = () => {
         json: true
       };
 
-      let latestPackage = await request(getPackageUrl('stable'), options);
+      let latestPackage = await request(getPackageUrl('master'), options);
 
       let result = compareVersion(latestPackage.version, currentPackage.version);
 
